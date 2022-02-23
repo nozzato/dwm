@@ -1,6 +1,6 @@
 Arch installation instructions
 ==============================
-sudo pacman -Sy tty-font-awesome
+sudo pacman -Sy ttf-nerd-fonts-symbols-mono
 cd sources
 git clone https://github.com/nozzato/dwm.git
 cd dwm
