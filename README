@@ -10,6 +10,7 @@ sudo make clean install
 
 Patches
 -------
+actualfullscreen
 default tag apps
 fullgaps
 statusallmons
