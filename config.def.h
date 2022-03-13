@@ -41,9 +41,9 @@ static const char *colors[][3] = {
 };
 
 /* tagging */
-//static const char *tags[]         = { "1",  "2",  "3",  "4",  "5",  "6",  "7",  "8",  "9"  };
-//static const char *tags[]         = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
-static const char *tags[]           = { "",  "",  "",  "",  "",  "",  "",  "",  "" };
+//static const char *tags[]         = { "1",  "2",  "3",  "4",  "5",  "6",  "7",  "8",  "9",  "0"  };
+//static const char *tags[]         = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "零" };
+static const char *tags[]           = { "",  "",  "",  "",  "",  "",  "",  "",  "",  ""  };
 static const char *defaulttagapps[] = { "st", "stranger", "librewolf", "stvim", "libreoffice", "gimp", "betterbird", "discord", "steam" };
 
 static const Rule rules[] = {
@@ -116,9 +116,6 @@ static Key keys[] = {
     { MODKEY,           XK_period,      focusmon,       {.i = +1 } },
     { MODKEY|ShiftMask, XK_comma,       tagmon,         {.i = -1 } },
     { MODKEY|ShiftMask, XK_period,      tagmon,         {.i = +1 } },
-    { MODKEY,           XK_minus,       setgaps,        {.i = -1 } },
-    { MODKEY,           XK_equal,       setgaps,        {.i = +1 } },
-    { MODKEY|ShiftMask, XK_equal,       setgaps,        {.i = 0  } },
     TAGKEYS(            XK_exclam,                      0)
     TAGKEYS(            XK_quotedbl,                    1)
     TAGKEYS(            XK_sterling,                    2)
@@ -128,6 +125,7 @@ static Key keys[] = {
     TAGKEYS(            XK_ampersand,                   6)
     TAGKEYS(            XK_asterisk,                    7)
     TAGKEYS(            XK_parenleft,                   8)
+    TAGKEYS(            XK_parenright,                  9)
     { MODKEY|ShiftMask, XK_BackSpace,   quit,           {0} },
 };
 
