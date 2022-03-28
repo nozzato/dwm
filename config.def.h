@@ -91,6 +91,7 @@ static char dmenumon[2]         = "0";  /* component of dmenucmd, manipulated in
 static const char *dmenucmd[]   = { "dmenu_run" };
 static const char *clipmenucmd[] = { "clipmenu", NULL };
 static const char *termcmd[]    = { "st", NULL };
+static const char *xkillcmd[]    = { "xkill", NULL };
 
 static Key keys[] = {
     /* modifier         key             function        argument */
@@ -98,6 +99,7 @@ static Key keys[] = {
     { MODKEY,           XK_d,           spawn,          {.v = dmenucmd } },
     { MODKEY,           XK_c,           spawn,          {.v = clipmenucmd} },
     { MODKEY|ShiftMask, XK_Return,      spawn,          {.v = termcmd } },
+    { MODKEY,           XK_Escape,      spawn,          {.v = xkillcmd } },
     { MODKEY,           XK_s,           spawndefault,   {0} },
     { MODKEY,           XK_b,           togglebar,      {0} },
     { MODKEY,           XK_y,           focusstack,     {.i = +1 } },
