@@ -65,6 +65,11 @@ Spawn
 .BR dmenu(1)
 for launching other programs.
 .TP
+.B Mod1\-d
+Spawn
+.BR dmenu(1)
+for launching other programs.
+.TP
 .B Mod1\-,
 Focus previous screen, if any.
 .TP
@@ -88,6 +93,9 @@ Sets floating layout.
 .TP
 .B Mod1\-m
 Sets monocle layout.
+.TP
+.B Mod1\-Shift\-m
+Toggles full screen.
 .TP
 .B Mod1\-space
 Toggles between current and previous layout.
@@ -143,18 +151,12 @@ View all windows with any tag.
 .B Mod1\-Control\-[1..n]
 Add/remove all windows with nth tag to/from the view.
 .TP
-.B Mod1\--
-Decrease the gaps around windows.
-.TP
-.B Mod!\-=
-Increase the gaps around windows.
-.TP
-.B Mod1\-Shift-=
-Reset the gaps around windows to
-.BR 0 .
-.TP
 .B Mod1\-Shift\-BackSpace
 Quit dwm.
+.SS Mouse commands
+.TP
+.B Mod1\-Control\-Shift\-BackSpace
+Restart dwm.
 .SS Mouse commands
 .TP
 .B Mod1\-Button1
@@ -168,6 +170,13 @@ Resize focused window while dragging. Tiled windows will be toggled to the float
 .SH CUSTOMIZATION
 dwm is customized by creating a custom config.h and (re)compiling the source
 code. This keeps it fast, secure and simple.
+SH SIGNALS
+.TP
+.B SIGHUP - 1
+Restart the dwm process.
+.TP
+.B SIGTERM - 15
+Cleanly terminate the dwm process.
 .SH SEE ALSO
 .BR dmenu (1),
 .BR st (1)
