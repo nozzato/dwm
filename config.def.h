@@ -94,62 +94,59 @@ static const char *termcmd[]    = { "st", NULL };
 static const char *xkillcmd[]    = { "xkill", NULL };
 
 static Key keys[] = {
-    /* modifier                     key             function            argument */
-    { MODKEY,                       XK_p,           spawn,              {.v = dmenucmd } },
-    { MODKEY,                       XK_d,           spawn,              {.v = dmenucmd } },
-    { MODKEY,                       XK_c,           spawn,              {.v = clipmenucmd} },
-    { MODKEY|ShiftMask,             XK_Return,      spawn,              {.v = termcmd } },
-    { MODKEY,                       XK_Escape,      spawn,              {.v = xkillcmd } },
-    { MODKEY,                       XK_s,           spawndefault,       {0} },
-    { MODKEY,                       XK_b,           togglebar,          {0} },
-    { MODKEY,                       XK_y,           focusstack,         {.i = +1 } },
-    { MODKEY,                       XK_g,           focusstack,         {.i = -1 } },
-    { MODKEY,                       XK_o,           incnmaster,         {.i = +1 } },
-    { MODKEY,                       XK_i,           incnmaster,         {.i = -1 } },
-    { MODKEY,                       XK_n,           setmfact,           {.f = -0.05} },
-    { MODKEY,                       XK_e,           setmfact,           {.f = +0.05} },
-    { MODKEY,                       XK_Return,      zoom,               {0} },
-    { MODKEY,                       XK_Tab,         view,               {0} },
-    { MODKEY|ShiftMask,             XK_q,           killclient,         {0} },
-    { MODKEY,                       XK_t,           setlayout,          {.v = &layouts[0]} },
-    { MODKEY,                       XK_f,           setlayout,          {.v = &layouts[1]} },
-    { MODKEY,                       XK_m,           setlayout,          {.v = &layouts[2]} },
-    { MODKEY,                       XK_space,       setlayout,          {0} },
-    { MODKEY|ShiftMask,             XK_space,       togglefloating,     {0} },
-    { MODKEY|ShiftMask,             XK_m,           togglefullscr,      {0} },
-    { MODKEY,                       XK_grave,       scratchpad_show,    {0} },
-	{ MODKEY,                       XK_minus,       scratchpad_hide,    {0} },
-    { MODKEY,                       XK_equal,       scratchpad_remove,  {0} },
-    { MODKEY,                       XK_0,           view,               {.ui = ~0 } },
-    { MODKEY|ShiftMask,             XK_0,           tag,                {.ui = ~0 } },
-    { MODKEY,                       XK_comma,       focusmon,           {.i = -1 } },
-    { MODKEY,                       XK_period,      focusmon,           {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_comma,       tagmon,             {.i = -1 } },
-    { MODKEY|ShiftMask,             XK_period,      tagmon,             {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_BackSpace,   quit,               {0} },
-    { MODKEY|ControlMask|ShiftMask, XK_BackSpace,   quit,               {1} },
+    /* modifier         key             function        argument */
+    { MODKEY,                       XK_p,           spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_d,           spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_c,           spawn,          {.v = clipmenucmd} },
+    { MODKEY|ShiftMask,             XK_Return,      spawn,          {.v = termcmd } },
+    { MODKEY,                       XK_Escape,      spawn,          {.v = xkillcmd } },
+    { MODKEY,                       XK_s,           spawndefault,   {0} },
+    { MODKEY,                       XK_b,           togglebar,      {0} },
+    { MODKEY,                       XK_y,           focusstack,     {.i = +1 } },
+    { MODKEY,                       XK_g,           focusstack,     {.i = -1 } },
+    { MODKEY,                       XK_o,           incnmaster,     {.i = +1 } },
+    { MODKEY,                       XK_i,           incnmaster,     {.i = -1 } },
+    { MODKEY,                       XK_n,           setmfact,       {.f = -0.05} },
+    { MODKEY,                       XK_e,           setmfact,       {.f = +0.05} },
+    { MODKEY,                       XK_Return,      zoom,           {0} },
+    { MODKEY,                       XK_Tab,         view,           {0} },
+    { MODKEY|ShiftMask,             XK_q,           killclient,     {0} },
+    { MODKEY,                       XK_t,           setlayout,      {.v = &layouts[0]} },
+    { MODKEY,                       XK_f,           setlayout,      {.v = &layouts[1]} },
+    { MODKEY,                       XK_m,           setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                       XK_space,       setlayout,      {0} },
+    { MODKEY|ShiftMask,             XK_space,       togglefloating, {0} },
+    { MODKEY|ShiftMask,             XK_m,           togglefullscr,  {0} },
+    { MODKEY,                       XK_0,           view,           {.ui = ~0 } },
+    { MODKEY|ShiftMask,             XK_0,           tag,            {.ui = ~0 } },
+    { MODKEY,                       XK_comma,       focusmon,       {.i = -1 } },
+    { MODKEY,                       XK_period,      focusmon,       {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_comma,       tagmon,         {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_period,      tagmon,         {.i = +1 } },
     /* standard */
-    TAGKEYS(                        XK_1,                               0)
-    TAGKEYS(                        XK_2,                               1)
-    TAGKEYS(                        XK_3,                               2)
-    TAGKEYS(                        XK_4,                               3)
-    TAGKEYS(                        XK_5,                               4)
-    TAGKEYS(                        XK_6,                               5)
-    TAGKEYS(                        XK_7,                               6)
-    TAGKEYS(                        XK_8,                               7)
-    TAGKEYS(                        XK_9,                               8)
-    TAGKEYS(                        XK_0,                               9)
+    TAGKEYS(                        XK_1,                           0)
+    TAGKEYS(                        XK_2,                           1)
+    TAGKEYS(                        XK_3,                           2)
+    TAGKEYS(                        XK_4,                           3)
+    TAGKEYS(                        XK_5,                           4)
+    TAGKEYS(                        XK_6,                           5)
+    TAGKEYS(                        XK_7,                           6)
+    TAGKEYS(                        XK_8,                           7)
+    TAGKEYS(                        XK_9,                           8)
+    TAGKEYS(                        XK_0,                           9)
     /* programmer */
-//  TAGKEYS(                        XK_exclam,                          0)
-//  TAGKEYS(                        XK_quotedbl,                        1)
-//  TAGKEYS(                        XK_sterling,                        2)
-//  TAGKEYS(                        XK_dollar,                          3)
-//  TAGKEYS(                        XK_percent,                         4)
-//  TAGKEYS(                        XK_asciicircum,                     5)
-//  TAGKEYS(                        XK_ampersand,                       6)
-//  TAGKEYS(                        XK_asterisk,                        7)
-//  TAGKEYS(                        XK_parenleft,                       8)
-//  TAGKEYS(                        XK_parenright,                      9)
+//  TAGKEYS(                        XK_exclam,                      0)
+//  TAGKEYS(                        XK_quotedbl,                    1)
+//  TAGKEYS(                        XK_sterling,                    2)
+//  TAGKEYS(                        XK_dollar,                      3)
+//  TAGKEYS(                        XK_percent,                     4)
+//  TAGKEYS(                        XK_asciicircum,                 5)
+//  TAGKEYS(                        XK_ampersand,                   6)
+//  TAGKEYS(                        XK_asterisk,                    7)
+//  TAGKEYS(                        XK_parenleft,                   8)
+//  TAGKEYS(                        XK_parenright,                  9)
+    { MODKEY|ShiftMask,             XK_BackSpace,   quit,           {0} },
+    { MODKEY|ControlMask|ShiftMask, XK_BackSpace,   quit,           {1} },
 };
 
 /* button definitions */
