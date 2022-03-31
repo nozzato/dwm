@@ -94,7 +94,7 @@ static const char *termcmd[]    = { "st", NULL };
 static const char *xkillcmd[]    = { "xkill", NULL };
 
 static Key keys[] = {
-    /* modifier         key             function        argument */
+    /* modifier                     key             function        argument */
     { MODKEY,                       XK_p,           spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_d,           spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_c,           spawn,          {.v = clipmenucmd} },
@@ -123,7 +123,9 @@ static Key keys[] = {
     { MODKEY,                       XK_period,      focusmon,       {.i = +1 } },
     { MODKEY|ShiftMask,             XK_comma,       tagmon,         {.i = -1 } },
     { MODKEY|ShiftMask,             XK_period,      tagmon,         {.i = +1 } },
-    /* standard */
+    { MODKEY|ShiftMask,             XK_BackSpace,   quit,           {0} },
+    { MODKEY|ControlMask|ShiftMask, XK_BackSpace,   quit,           {1} },
+    /* standard keys */
     TAGKEYS(                        XK_1,                           0)
     TAGKEYS(                        XK_2,                           1)
     TAGKEYS(                        XK_3,                           2)
@@ -134,7 +136,7 @@ static Key keys[] = {
     TAGKEYS(                        XK_8,                           7)
     TAGKEYS(                        XK_9,                           8)
     TAGKEYS(                        XK_0,                           9)
-    /* programmer */
+    /* programmer keys */
 //  TAGKEYS(                        XK_exclam,                      0)
 //  TAGKEYS(                        XK_quotedbl,                    1)
 //  TAGKEYS(                        XK_sterling,                    2)
@@ -145,8 +147,6 @@ static Key keys[] = {
 //  TAGKEYS(                        XK_asterisk,                    7)
 //  TAGKEYS(                        XK_parenleft,                   8)
 //  TAGKEYS(                        XK_parenright,                  9)
-    { MODKEY|ShiftMask,             XK_BackSpace,   quit,           {0} },
-    { MODKEY|ControlMask|ShiftMask, XK_BackSpace,   quit,           {1} },
 };
 
 /* button definitions */
