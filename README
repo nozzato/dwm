@@ -20,7 +20,9 @@ Patches
 -------
 actualfullscreen
 alwayscenter
+attachdirection
 default tag apps
+dmenumatchtop
 fullgaps
 restartsig
 statusallmons
