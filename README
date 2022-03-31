@@ -19,6 +19,7 @@ Install dwm
 Patches
 -------
 actualfullscreen
+alwayscenter
 default tag apps
 fullgaps
 restartsig
