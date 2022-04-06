@@ -98,7 +98,7 @@ static Key keys[] = {
     /* modifier                     key             function        argument */
     { MODKEY,                       XK_p,           spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_d,           spawn,          {.v = dmenucmd } },
-    { MODKEY,                       XK_v,           spawn,          {.v = clipmenucmd} },
+    { MODKEY,                       XK_c,           spawn,          {.v = clipmenucmd} },
     { MODKEY|ShiftMask,             XK_Return,      spawn,          {.v = termcmd } },
     { MODKEY,                       XK_Escape,      spawn,          {.v = xkillcmd } },
     { MODKEY,                       XK_s,           spawndefault,   {0} },
@@ -126,7 +126,6 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_period,      tagmon,         {.i = +1 } },
     { MODKEY|ShiftMask,             XK_BackSpace,   quit,           {0} },
     { MODKEY|ControlMask|ShiftMask, XK_BackSpace,   quit,           {1} },
-    /* standard keys */
     TAGKEYS(                        XK_1,                           0)
     TAGKEYS(                        XK_2,                           1)
     TAGKEYS(                        XK_3,                           2)
@@ -137,17 +136,16 @@ static Key keys[] = {
     TAGKEYS(                        XK_8,                           7)
     TAGKEYS(                        XK_9,                           8)
     TAGKEYS(                        XK_0,                           9)
-    /* programmer keys */
-//  TAGKEYS(                        XK_exclam,                      0)
-//  TAGKEYS(                        XK_quotedbl,                    1)
-//  TAGKEYS(                        XK_sterling,                    2)
-//  TAGKEYS(                        XK_dollar,                      3)
-//  TAGKEYS(                        XK_percent,                     4)
-//  TAGKEYS(                        XK_asciicircum,                 5)
-//  TAGKEYS(                        XK_ampersand,                   6)
-//  TAGKEYS(                        XK_asterisk,                    7)
-//  TAGKEYS(                        XK_parenleft,                   8)
-//  TAGKEYS(                        XK_parenright,                  9)
+    TAGKEYS(                        XK_exclam,                      0)
+    TAGKEYS(                        XK_quotedbl,                    1)
+    TAGKEYS(                        XK_sterling,                    2)
+    TAGKEYS(                        XK_dollar,                      3)
+    TAGKEYS(                        XK_percent,                     4)
+    TAGKEYS(                        XK_asciicircum,                 5)
+    TAGKEYS(                        XK_ampersand,                   6)
+    TAGKEYS(                        XK_asterisk,                    7)
+    TAGKEYS(                        XK_parenleft,                   8)
+    TAGKEYS(                        XK_parenright,                  9)
 };
 
 /* button definitions */
