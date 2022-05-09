@@ -44,7 +44,7 @@ static const char *colors[][3] = {
 //static const char *tags[]         = { "1",  "2",  "3",  "4",  "5",  "6",  "7",  "8",  "9",  "0"  };
 //static const char *tags[]         = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "零" };
 static const char *tags[]           = { "",  "",  "",  "",  "",  "",  "",  "",  "",  ""  };
-static const char *defaulttagapps[] = { "stabbed", "stranger", "librewolf", "stvim", "libreoffice", "gimp", "betterbird", "disco", "steam", "keepassxc" };
+static const char *defaulttagapps[] = { "stabbed", "stranger", "librewolf", "emacs", "libreoffice", "gimp", "betterbird", "disco", "steam", "keepassxc" };
 
 static const Rule rules[] = {
     /* xprop(1):
