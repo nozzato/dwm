@@ -59,7 +59,7 @@ static const Rule rules[] = {
     { "Gimp",       NULL,       NULL,                               0,          1,          -1 },
     { "Gimp",       NULL,       "GNU Image Manipulation Program",   0,          0,          -1 },
     { "Steam",      NULL,       NULL,                               1 << 8,     1,          -1 },
-    { "Steam",      NULL,       "Steam",                            1 << 8,     0,          -1 },
+    { NULL,         NULL,       "Steam",                            1 << 8,     1,          -1 },
     { "Steam",      NULL,       "Steam - News",                     1 << 8,     1,          -1 },
 };
 
