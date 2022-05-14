@@ -25,7 +25,7 @@ static const char urg_bg[]              = "#FF6188";
 static const char urg_border[]          = "#FF6188";
 static const char title_fg[]            = "#78DCE8";
 static const char title_bg[]            = "#272822";
-static const char col_borderbar[] = "#75715e";
+static const char col_borderbar[]       = "#75715e";
 /* schemes */
 static const char *colors[][3] = {
     /* scheme       fg              bg          border */
