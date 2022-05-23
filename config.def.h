@@ -46,6 +46,9 @@ static const char *colors[][3] = {
 static const char *tags[]           = { "",  "",  "",  "",  "",  "",  "",  "",  "",  ""  };
 static const char *defaulttagapps[] = { "stabbed", "stranger", "librewolf", "emacs", "libreoffice", "gimp", "betterbird", "disco", "steam", "keepassxc" };
 
+/* lockfile */
+static char lockfile[] = "/tmp/dwm.lock";
+
 static const Rule rules[] = {
     /* xprop(1):
     *     WM_CLASS(STRING) = instance, class
