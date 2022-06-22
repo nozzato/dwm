@@ -100,6 +100,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2]             = "0";  /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]       = { "dmenu_run", topbar ? NULL : "-b", NULL };
+static const char *dmenucalccmd[]   = { "dmenu-calc", NULL };
 static const char *clipmenucmd[]    = { "clipmenu", NULL };
 static const char *termcmd[]        = { "tabbed", "-c", "-r", "2", "st", "-w", "''", NULL };
 static const char *xkillcmd[]       = { "xkill", NULL };
@@ -110,6 +111,7 @@ static Key keys[] = {
     /* modifier                     key             function        argument */
     { MODKEY,                       XK_p,           spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_d,           spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_c,           spawn,          {.v = dmenucalccmd } },
     { MODKEY,                       XK_v,           spawn,          {.v = clipmenucmd} },
     { MODKEY|ShiftMask,             XK_Return,      spawn,          {.v = termcmd } },
     { MODKEY,                       XK_grave,       togglescratch,  {.v = scratchpadcmd } },
