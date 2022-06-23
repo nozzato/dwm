@@ -65,6 +65,7 @@ static const Rule rules[] = {
     { "Steam",      NULL,       NULL,                               1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
     { NULL,         NULL,       "Steam",                            1 << 8,     0,          -1,      -1, -1, -1, -1,    -1 },
     { "Steam",      NULL,       "Steam - News",                     1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
+    { "Steam",      NULL,       "Steam Guard",                      1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
 };
 
 /* window swallowing */
