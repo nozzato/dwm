@@ -66,6 +66,7 @@ static const Rule rules[] = {
     { "Gimp",       NULL,       NULL,                               0,          1,          -1,      -1, -1, -1, -1,    -1 },
     { "Gimp",       NULL,       "GNU Image Manipulation Program",   0,          0,          -1,      -1, -1, -1, -1,    -1 },
     { "Godot",      NULL,       NULL,                               0,          1,          -1,      -1, -1, -1, -1,    -1 },
+    { "gotop",      NULL,       NULL,                               0,          1,          -1,      -1, -1,620,803,    -1 },
     { "KeePassXC",  NULL,       NULL,                               1 << 6,     0,          -1,      -1, -1, -1, -1,    -1 },
     { "Steam",      NULL,       NULL,                               1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
     { NULL,         NULL,       "Steam",                            1 << 8,     0,          -1,      -1, -1, -1, -1,    -1 },
