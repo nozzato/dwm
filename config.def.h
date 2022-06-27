@@ -61,6 +61,7 @@ static const Rule rules[] = {
     */
     /* class        instance    title                               tags mask   isfloating  monitor float x,y,w,h       floatborderpx */
     { "Betterbird", NULL,       NULL,                               1 << 5,     0,          -1,      -1, -1, -1, -1,    -1 },
+    { "Conky",      NULL,       NULL,                               0,          1,          -1,      -1, -1, -1, -1,    -1 },
     { "discord",    NULL,       NULL,                               1 << 7,     0,          -1,      -1, -1, -1, -1,    -1 },
     { "Firefox",    NULL,       "Picture-in-Picture",               0,          1,          -1,      -1, -1, -1, -1,    -1 },
     { "Gimp",       NULL,       NULL,                               0,          1,          -1,      -1, -1, -1, -1,    -1 },
