@@ -41,6 +41,12 @@ Some keybinds have been adapted to the uk workman layout.
 I have also included alternate keybinds for programmer keys.
 
 
+Todo
+----
+Fix the inability to swallow windows from the command line.
+Fix floating windows not following position rules.
+
+
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
