@@ -69,6 +69,7 @@ static const Rule rules[] = {
     { "Godot",      NULL,       NULL,                               0,          1,          -1,      -1, -1, -1, -1,    -1 },
     { "Steam",      NULL,       NULL,                               1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
     { NULL,         NULL,       "Steam",                            1 << 8,     0,          -1,      -1, -1, -1, -1,    -1 },
+    { "Steam",      NULL,       "Music Player",                     1 << 8,     0,          -1,      -1, -1, -1, -1,    -1 },
     { "Steam",      NULL,       "Steam - News",                     1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
     { "Steam",      NULL,       "Steam Guard",                      1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
 };
