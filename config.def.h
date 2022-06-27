@@ -40,6 +40,11 @@ static const char *colors[][3] = {
 //  [SchemeTitle]   = { title_fg,   title_bg,   norm_border },
 };
 
+static const char *const autostart[] = {
+    "sh", "-c", "sleep 1 && xdotool key super+shift+7", NULL,
+	NULL /* terminate */
+};
+
 /* tagging */
 //static const char *tags[]         = { "1",  "2",  "3",  "4",  "5",  "6",  "7",  "8",  "9",  "0"  };
 //static const char *tags[]         = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "零" };
