@@ -114,7 +114,7 @@ static const char *termcmd[]        = { "tabbed", "-c", "-r", "2", "st", "-w", "
 static const char *xkillcmd[]       = { "xkill", NULL };
 static const char scratchpadname[]  = "scratchpad";
 static const char *scratchpadcmd[]  = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
-static const char *alockcmd[]       = { "alock", "-bg", "none", NULL };
+static const char *alockcmd[]       = { "alock", "-bg", "none", "-cursor", "blank", NULL };
 
 static Key keys[] = {
     /* modifier                     key             function        argument */
