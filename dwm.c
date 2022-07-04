@@ -1050,6 +1050,12 @@ drawbar(Monitor *m)
 		x = drw_text(drw, x, 0, w, bh, lrpad / 2, swalsymbol, 0);
 	}
 
+    /* Draw stickysymbol next to ltsymbol. */
+	if (m->sel && m->sel->issticky) {
+		w = TEXTW(stickysymbol);
+		x = drw_text(drw, x, 0, w, bh, lrpad / 2, stickysymbol, 0);
+	}
+
 	if ((w = m->ww - tw - x) > bh) {
 		if (m->sel) {
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
