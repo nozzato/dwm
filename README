@@ -43,8 +43,8 @@ I have also included alternate keybinds for programmer keys.
 
 Todo
 ----
-Fix the inability to swallow windows from the command line.
 Fix floating windows not following position rules.
+Fix tabbed not working with dwmswallow and ueberzug.
 
 
 dwm - dynamic window manager

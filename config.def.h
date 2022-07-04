@@ -48,7 +48,7 @@ static const char *const autostart[] = {
 //static const char *tags[]         = { "1",  "2",  "3",  "4",  "5",  "6",  "7",  "8",  "9",  "0"  };
 //static const char *tags[]         = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "零" };
 static const char *tags[]           = { "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
-static const char *defaulttagapps[] = { "stabbed", "stranger", "librewolf", "emacsbg", "libreoffice", "betterbird", "keepassxc", "disco", "steam", NULL };
+static const char *defaulttagapps[] = { "st", "stranger", "librewolf", "emacsbg", "libreoffice", "betterbird", "keepassxc", "disco", "steam", NULL };
 
 /* lockfile */
 static char lockfile[] = "/tmp/dwm.lock";
@@ -110,7 +110,7 @@ static char dmenumon[2]             = "0";  /* component of dmenucmd, manipulate
 static const char *dmenucmd[]       = { "dmenu_run", topbar ? NULL : "-b", NULL };
 static const char *dcalccmd[]       = { "dcalc", NULL };
 static const char *clipmenucmd[]    = { "clipmenu", NULL };
-static const char *termcmd[]        = { "tabbed", "-c", "-r", "2", "st", "-w", "''", NULL };
+static const char *termcmd[]        = { "st", NULL };
 static const char *xkillcmd[]       = { "xkill", NULL };
 static const char scratchpadname[]  = "scratchpad";
 static const char *scratchpadcmd[]  = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
