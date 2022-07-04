@@ -46,6 +46,7 @@ Todo
 ----
 Fix floating windows not following position rules.
 Fix tabbed not working with dwmswallow and ueberzug.
+Fix sticky window becoming unstuck when swallowed.
 
 
 dwm - dynamic window manager
