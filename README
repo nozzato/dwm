@@ -4,13 +4,13 @@ Clone the repository
 $ git clone https://github.com/nozzato/dwm.git
 
 Modify config.h
-$ cp config.def.h config.h      (choose a set of icons for the tags and change
-$ vim config.h                   the default tag apps to your preference)
+$ cp config.def.h config.h      /* choose a set of icons for the tags and change
+$ vim config.h                     the default tag apps to your preference */
 
 Install these packages
-libxinerama                     (dwm dependency)
-ttf-nerd-fonts-symbols-mono     (for tag icons)
-adobe-source-han-sans-jp-fonts  (for tag kanji)
+libxinerama                     // dwm dependency
+ttf-nerd-fonts-symbols-mono     // for tag icons
+adobe-source-han-sans-jp-fonts  // for tag kanji
 
 Install dwm
 # make clean install
