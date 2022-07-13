@@ -47,7 +47,7 @@ static const char *const autostart[] = {
 /* tagging */
 //static const char *tags[]         = { "1",  "2",  "3",  "4",  "5",  "6",  "7",  "8",  "9",  "0"  };
 //static const char *tags[]         = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "零" };
-static const char *tags[]           = { "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
+static const char *tags[]           = { "",  "",  "",  "",  "",  "",  "",  "",  "",  "" };
 static const char *defaulttagapps[] = { "st", "stranger", "librewolf", "emacsbg", "libreoffice", "betterbird", "keepassxc", "disco", "steam", NULL };
 
 /* lockfile */
@@ -68,11 +68,13 @@ static const Rule rules[] = {
     { "Godot",      NULL,       NULL,                               0,          1,          -1,      -1, -1, -1, -1,    -1 },
     { "gotop",      NULL,       NULL,                               0,          1,          -1,      -1, -1,620,803,    -1 },
     { "KeePassXC",  NULL,       NULL,                               1 << 6,     0,          -1,      -1, -1, -1, -1,    -1 },
+    { "MobyDroid",  NULL,       "Working...",                       0,          1,          -1,      -1, -1, -1, -1,    -1 },
     { "Steam",      NULL,       NULL,                               1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
     { NULL,         NULL,       "Steam",                            1 << 8,     0,          -1,      -1, -1, -1, -1,    -1 },
     { "Steam",      NULL,       "Music Player",                     1 << 8,     0,          -1,      -1, -1, -1, -1,    -1 },
     { "Steam",      NULL,       "Steam - News",                     1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
     { "Steam",      NULL,       "Steam Guard",                      1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
+    { "Steam",      NULL,       "new Steam library folder",         1 << 8,     1,          -1,      -1, -1, -1, -1,    -1 },
 };
 
 /* window swallowing */
