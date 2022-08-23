@@ -28,6 +28,8 @@ doublepressquit
 dynamicswallow
 floatrules
 fullgaps
+noborder
+nomonocleborders
 restartsig
 scratchpad
 status2d
