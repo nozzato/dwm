@@ -1,3 +1,25 @@
+Arch installation instructions
+==============================
+Clone the repository
+$ git clone https://github.com/nozzato/dwm.git
+
+Modify config.h
+$ cp config.def.h config.h      /* choose a set of icons for the tags and change
+$ vim config.h                     the default tag apps to your preference */
+
+Install these packages
+libxinerama                     // dwm dependency
+ttf-nerd-fonts-symbols-mono     // for tag icons
+
+Install dwm
+# make clean install
+
+
+Keybinds
+--------
+Some keybinds have been adapted for a UK keyboard and my preferences.
+
+
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
