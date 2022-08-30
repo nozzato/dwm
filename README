@@ -15,6 +15,11 @@ Install dwm
 # make clean install
 
 
+Patches
+-------
+scratchpads
+
+
 Keybinds
 --------
 Some keybinds have been adapted for a UK keyboard and my preferences.
