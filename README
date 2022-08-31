@@ -9,7 +9,7 @@ $ vim config.h                     the default tag apps to your preference */
 
 Install these packages
 libxinerama                     // dwm dependency
-ttf-nerd-fonts-symbols-mono     // for tag icons
+nerd-fonts-dejavu-complete      // font and bar icons
 
 Install dwm
 # make clean install
