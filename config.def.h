@@ -8,16 +8,10 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "DejaVuSansMono Nerd Font:size=10" };
-static const char col_norm_fg[]     = "#cccccc";
-static const char col_norm_bg[]     = "#080808";
-static const char col_norm_border[] = "#303030";
-static const char col_sel_fg[]      = "#ffffff";
-static const char col_sel_bg[]      = "#080808";
-static const char col_sel_border[]  = "#303030";
 static const char *colors[][3]      = {
-	/*               fg           bg           border         */
-	[SchemeNorm] = { col_norm_fg, col_norm_bg, col_norm_border },
-	[SchemeSel]  = { col_sel_fg,  col_sel_bg,  col_sel_border  },
+	/*               fg         bg         border   */
+	[SchemeNorm] = { "#cccccc", "#1c1c1c", "#303030" },
+	[SchemeSel]  = { "#cccccc", "#00875f", "#303030" },
 };
 
 typedef struct {
