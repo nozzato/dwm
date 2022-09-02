@@ -22,6 +22,7 @@ restartsig
 restoreafterrestart
 scratchpads
 status2d
+status2d-swapsaverestore
 titlecolor
 
 
