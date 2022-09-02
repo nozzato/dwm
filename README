@@ -19,6 +19,7 @@ Patches
 -------
 attachdirection
 doublepressquit
+dynamicswallow
 restartsig
 restoreafterrestart
 scratchpads
