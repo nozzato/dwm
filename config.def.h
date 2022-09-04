@@ -81,6 +81,7 @@ static const char *calccmd[] = { "dcalc", NULL };
 static const char *termcmd[] = { "st", NULL };
 static const char *killcmd[] = { "xkill", NULL };
 static const char *lockcmd[] = { "alock", "-bg", "none", "-cursor", "blank", NULL };
+static const char *shotcmd[] = { "maimshot", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -91,6 +92,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_Escape, spawn,          {.v = killcmd } },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = lockcmd } },
+	{ 0,                            XK_Print,  spawn,          {.v = shotcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_x,      togglescratch,  {.ui = 1 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
