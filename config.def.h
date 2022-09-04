@@ -75,39 +75,39 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu-recent-aliases", NULL };
-static const char *clipmenucmd[]  = { "clipmenu", NULL };
-static const char *dcalccmd[]  = { "dcalc", NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *xkillcmd[]  = { "xkill", NULL };
-static const char *alockcmd[]  = { "alock", "-bg", "none", "-cursor", "blank", NULL };
+static const char *menucmd[] = { "dmenu-recent-aliases", NULL };
+static const char *clipcmd[] = { "clipmenu", NULL };
+static const char *calccmd[] = { "dcalc", NULL };
+static const char *termcmd[] = { "st", NULL };
+static const char *killcmd[] = { "xkill", NULL };
+static const char *lockcmd[] = { "alock", "-bg", "none", "-cursor", "blank", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_v,      spawn,          {.v = clipmenucmd } },
-	{ MODKEY,                       XK_c,      spawn,          {.v = dcalccmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = menucmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = menucmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = clipcmd } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = calccmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_Escape, spawn,          {.v = xkillcmd } },
-	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = alockcmd } },
+	{ MODKEY,                       XK_Escape, spawn,          {.v = killcmd } },
+	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_x,      togglescratch,  {.ui = 1 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-    /* qwerty */
+	/* qwerty */
 	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_l,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_n,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_m,      setmfact,       {.f = +0.05} },
-    /* workman */
-//  { MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
-//  { MODKEY,                       XK_n,      focusstack,     {.i = -1 } },
-//  { MODKEY,                       XK_y,      incnmaster,     {.i = +1 } },
-//  { MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
-//  { MODKEY,                       XK_k,      setmfact,       {.f = -0.05} },
-//  { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	/* workman */
+//	{ MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
+//	{ MODKEY,                       XK_n,      focusstack,     {.i = -1 } },
+//	{ MODKEY,                       XK_y,      incnmaster,     {.i = +1 } },
+//	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
+//	{ MODKEY,                       XK_k,      setmfact,       {.f = -0.05} },
+//	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
@@ -135,16 +135,16 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-    TAGKEYS(                        XK_exclam,                 0)
-    TAGKEYS(                        XK_quotedbl,               1)
-    TAGKEYS(                        XK_sterling,               2)
-    TAGKEYS(                        XK_dollar,                 3)
-    TAGKEYS(                        XK_percent,                4)
-    TAGKEYS(                        XK_asciicircum,            5)
-    TAGKEYS(                        XK_ampersand,              6)
-    TAGKEYS(                        XK_asterisk,               7)
-    TAGKEYS(                        XK_parenleft,              8)
-    TAGKEYS(                        XK_parenright,             9)
+	TAGKEYS(                        XK_exclam,                 0)
+	TAGKEYS(                        XK_quotedbl,               1)
+	TAGKEYS(                        XK_sterling,               2)
+	TAGKEYS(                        XK_dollar,                 3)
+	TAGKEYS(                        XK_percent,                4)
+	TAGKEYS(                        XK_asciicircum,            5)
+	TAGKEYS(                        XK_ampersand,              6)
+	TAGKEYS(                        XK_asterisk,               7)
+	TAGKEYS(                        XK_parenleft,              8)
+	TAGKEYS(                        XK_parenright,             9)
 };
 
 /* button definitions */
