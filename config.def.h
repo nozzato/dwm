@@ -21,10 +21,12 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = {"st", "-t", "scratchpad", "-n", "scratchpad", "-g", "120x34", NULL };
 const char *spcmd2[] = {"keepassxc", NULL };
+const char *spcmd3[] = {"veracrypt", NULL };
 static Sp scratchpads[] = {
-	/* name          cmd  */
-	{"spterm",      spcmd1},
-	{"keepassxc",   spcmd2},
+	/* name          cmd   */
+	{ "scratchpad",  spcmd1 },
+	{ "keepassxc",   spcmd2 },
+	{ "veracrypt",   spcmd3 },
 };
 
 /* tagging */
@@ -41,7 +43,8 @@ static const Rule rules[] = {
 	/* class      instance      title       tags mask       isfloating   monitor */
 	{ "Gimp",	  NULL,			NULL,		0,				1,			 -1 },
 	{ NULL,		  "scratchpad",	NULL,		SPTAG(0),		1,			 -1 },
-	{ NULL,		  "keepassxc",	NULL,		SPTAG(1),		1,			 -1 },
+	{ NULL,		  "keepassxc",	NULL,		SPTAG(1),		0,			 -1 },
+	{ NULL,		  "veracrypt",	NULL,		SPTAG(2),		1,			 -1 },
 };
 
 /* window swallowing */
@@ -95,6 +98,7 @@ static const Key keys[] = {
 	{ 0,                            XK_Print,  spawn,          {.v = shotcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_x,      togglescratch,  {.ui = 1 } },
+	{ MODKEY,                       XK_z,      togglescratch,  {.ui = 2 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	/* qwerty */
 	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
