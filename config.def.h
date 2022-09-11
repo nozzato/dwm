@@ -40,11 +40,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance      title       tags mask       isfloating   monitor */
-	{ "Gimp",	  NULL,			NULL,		0,				1,			 -1 },
-	{ NULL,		  "scratchpad",	NULL,		SPTAG(0),		1,			 -1 },
-	{ NULL,		  "keepassxc",	NULL,		SPTAG(1),		0,			 -1 },
-	{ NULL,		  "veracrypt",	NULL,		SPTAG(2),		1,			 -1 },
+	/* class   instance       title                              tags mask  isfloating  monitor */
+	{ "Gimp",  NULL,          NULL,                              0,         1,          -1 },
+	{ "Gimp",  NULL,          "GNU Image Manipulation Program",  0,         0,          -1 },
+	{ NULL,    "scratchpad",  NULL,                              SPTAG(0),  1,          -1 },
+	{ NULL,    "keepassxc",   NULL,                              SPTAG(1),  0,          -1 },
+	{ NULL,    "veracrypt",   NULL,                              SPTAG(2),  1,          -1 },
 };
 
 /* window swallowing */
