@@ -18,6 +18,7 @@ Install dwm
 Patches
 -------
 attachdirection
+defaulttagapps
 doublepressquit
 dynamicswallow
 restartsig

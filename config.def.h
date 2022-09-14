@@ -31,6 +31,7 @@ static Sp scratchpads[] = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *defaulttagapps[] = { NULL, NULL, NULL, NULL, "ncmpcpp-cava", "thunderbird", "discord", "steam", NULL };
 
 /* Lockfile */
 static char lockfile[] = "/tmp/dwm.lock";
@@ -100,6 +101,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Escape, spawn,          {.v = killcmd } },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = lockcmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = shotcmd } },
+	{ MODKEY,                       XK_s,      spawndefault,   {0} },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_x,      togglescratch,  {.ui = 1 } },
 	{ MODKEY,                       XK_z,      togglescratch,  {.ui = 2 } },
