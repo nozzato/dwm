@@ -45,6 +45,7 @@ static const Rule rules[] = {
 	{ "Gimp",        NULL,     "GNU Image Manipulation Program",  0,         0,          -1 },
 	{ "ncmpcpp",     NULL,     NULL,                              1 << 4,    1,          -1 },
 	{ "cava",        NULL,     NULL,                              1 << 4,    1,          -1 },
+	{ "thunderbird", NULL,     NULL,                              1 << 5,    0,          -1 },
 	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1 },
 	{ "KeePassXC",   NULL,     NULL,                              SPTAG(1),  0,          -1 },
 	{ "VeraCrypt",   NULL,     NULL,                              SPTAG(2),  1,          -1 },
