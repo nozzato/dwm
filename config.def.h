@@ -19,7 +19,7 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {"st", "-t", "scratchpad", "-n", "scratchpad", "-g", "120x34", NULL };
+const char *spcmd1[] = {"st", "-t", "scratchpad", "-g", "120x34", NULL };
 const char *spcmd2[] = {"keepassxc", NULL };
 const char *spcmd3[] = {"veracrypt", NULL };
 static Sp scratchpads[] = {
