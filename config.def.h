@@ -44,8 +44,7 @@ static const Rule rules[] = {
 	/* class         instance  title                              tags mask  isfloating  monitor */
 	{ "Gimp",        NULL,     NULL,                              0,         1,          -1 },
 	{ "Gimp",        NULL,     "GNU Image Manipulation Program",  0,         0,          -1 },
-	{ "ncmpcpp",     NULL,     NULL,                              1 << 4,    1,          -1 },
-	{ "cava",        NULL,     NULL,                              1 << 4,    1,          -1 },
+	{ "ncmpcppt",    NULL,     NULL,                              1 << 4,    0,          -1 },
 	{ "thunderbird", NULL,     NULL,                              1 << 5,    0,          -1 },
 	{ "discord",     NULL,     NULL,                              1 << 6,    0,          -1 },
 	{ "Steam",       NULL,     NULL,                              1 << 7,    1,          -1 },
