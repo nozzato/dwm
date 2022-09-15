@@ -31,7 +31,7 @@ static Sp scratchpads[] = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *defaulttagapps[] = { NULL, NULL, NULL, NULL, "ncmpcpp-cava", "thunderbird", "discord", "steam", NULL };
+static const char *defaulttagapps[] = { NULL, NULL, NULL, NULL, "ncmpcppt", "thunderbird", "discord", "steam", NULL };
 
 /* Lockfile */
 static char lockfile[] = "/tmp/dwm.lock";
