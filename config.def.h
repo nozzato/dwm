@@ -19,9 +19,9 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {"st", "-c", "scratchpad", "-t", "scratchpad", "-g", "120x34", NULL };
-const char *spcmd2[] = {"keepassxc", NULL };
-const char *spcmd3[] = {"veracrypt", NULL };
+const char *spcmd1[] = { "st", "-c", "scratchpad", "-t", "scratchpad", "-g", "120x34", NULL };
+const char *spcmd2[] = { "keepassxc", NULL };
+const char *spcmd3[] = { "systemd-inhibit", "--what=shutdown:sleep:idle:handle-power-key:handle-suspend-key:handle-hibernate-key:handle-lid-switch", "veracrypt", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd   */
 	{ "scratchpad",  spcmd1 },
