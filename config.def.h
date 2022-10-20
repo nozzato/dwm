@@ -134,10 +134,10 @@ static const Key keys[] = {
 	/* qwerty */
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_h,                       incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_l,                       incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_n,                       setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_m,                       setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_n,                       incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_m,                       incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_h,                       setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_l,                       setmfact,       {.f = +0.05} },
 	/* workman */
 //	{ MODKEY,                       XK_n,                       focusstack,     {.i = +1 } },
 //	{ MODKEY,                       XK_e,                       focusstack,     {.i = -1 } },
