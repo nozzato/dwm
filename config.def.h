@@ -99,12 +99,19 @@ static const char *screenshotcmd[] = { "maimshot", NULL };
 static const char *volumemutefn[]    = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *volumeupfn[]      = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *volumedownfn[]    = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
-static const char *eqtogglefn[]      = { "pulseaudio-equalizer", "toggle", NULL };
-static const char *audiotogglefn[]   = { "mpc", "toggle", NULL };
-static const char *audionextfn[]     = { "mpc", "next", NULL };
-static const char *audiopreviousfn[] = { "mpc", "prev", NULL };
 static const char *backlightupfn[]   = { "backlight_control", "+5", NULL };
 static const char *backlightdownfn[] = { "backlight_control", "-5", NULL };
+static const char *audiotogglefn[]   = { "playerctl", "play-pause", NULL };
+static const char *audionextfn[]     = { "playerctl", "next", NULL };
+static const char *audiopreviousfn[] = { "playerctl", "previous", NULL };
+static const char *eqenablefn[]      = { "pulseaudio-equalizer", "enable", NULL };
+static const char *eqdisablefn[]     = { "pulseaudio-equalizer", "disable", NULL };
+static const char *musictogglefn[]   = { "mpc", "toggle", NULL };
+static const char *musicnextfn[]     = { "mpc", "next", NULL };
+static const char *musicpreviousfn[] = { "mpc", "prev", NULL };
+
+
+
 
 static const Key keys[] = {
 	/* modifier                     key                         function        argument */
@@ -118,15 +125,19 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_a,                       spawn,          {.v = lockcmd } },
 	{ 0,                            XK_Print,                   spawn,          {.v = screenshotcmd } },
 
-	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = volumemutecmd } },
-	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = volumeupcmd } },
-	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = volumedowncmd } },
-	{ MODKEY,                       XK_F4,                      spawn,          {.v = eqtogglecmd } },
-	{ 0,                            XF86XK_AudioPlay,           spawn,          {.v = audiotogglecmd } },
-	{ 0,                            XF86XK_AudioNext,           spawn,          {.v = audionextcmd } },
-	{ 0,                            XF86XK_AudioPrev,           spawn,          {.v = audiopreviouscmd } },
-	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = backlightupcmd } },
-	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = backlightdowncmd } },
+	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = volumemutefn } },
+	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = volumeupfn } },
+	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = volumedownfn } },
+	{ 0,                            XF86XK_AudioPlay,           spawn,          {.v = audiotogglefn } },
+	{ 0,                            XF86XK_AudioNext,           spawn,          {.v = audionextfn } },
+	{ 0,                            XF86XK_AudioPrev,           spawn,          {.v = audiopreviousfn } },
+	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = backlightupfn } },
+	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = backlightdownfn } },
+	{ ShiftMask,                    XF86XK_AudioRaiseVolume,    spawn,          {.v = eqenablefn } },
+	{ ShiftMask,                    XF86XK_AudioLowerVolume,    spawn,          {.v = eqdisablefn } },
+	{ ShiftMask,                    XF86XK_AudioPlay,           spawn,          {.v = musictogglefn } },
+	{ ShiftMask,                    XF86XK_AudioNext,           spawn,          {.v = musicnextfn } },
+	{ ShiftMask,                    XF86XK_AudioPrev,           spawn,          {.v = musicpreviousfn } },
 
 	{ MODKEY,                       XK_s,                       spawndefault,   {0} },
 	{ MODKEY,                       XK_grave,                   togglescratch,  {.ui = 0 } },
