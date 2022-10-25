@@ -95,16 +95,16 @@ static const char *centercmd[] = { "center", NULL };
 static const char *killcmd[] = { "xkill", NULL };
 static const char *lockcmd[] = { "alock", "-bg", "none", "-cursor", "blank", NULL };
 static const char *screenshotcmd[] = { "maimshot", NULL };
-/* multimedia */
-static const char *volumemutecmd[]    = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
-static const char *volumeupcmd[]      = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
-static const char *volumedowncmd[]    = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
-static const char *eqtogglecmd[]      = { "pulseaudio-equalizer", "toggle", NULL };
-static const char *audiotogglecmd[]   = { "mpc", "toggle", NULL };
-static const char *audionextcmd[]     = { "mpc", "next", NULL };
-static const char *audiopreviouscmd[] = { "mpc", "prev", NULL };
-static const char *backlightupcmd[]   = { "backlight_control", "+5", NULL };
-static const char *backlightdowncmd[] = { "backlight_control", "-5", NULL };
+/* functions */
+static const char *volumemutefn[]    = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
+static const char *volumeupfn[]      = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *volumedownfn[]    = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *eqtogglefn[]      = { "pulseaudio-equalizer", "toggle", NULL };
+static const char *audiotogglefn[]   = { "mpc", "toggle", NULL };
+static const char *audionextfn[]     = { "mpc", "next", NULL };
+static const char *audiopreviousfn[] = { "mpc", "prev", NULL };
+static const char *backlightupfn[]   = { "backlight_control", "+5", NULL };
+static const char *backlightdownfn[] = { "backlight_control", "-5", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key                         function        argument */
@@ -117,6 +117,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Escape,                  spawn,          {.v = killcmd } },
 	{ MODKEY|ShiftMask,             XK_e,                       spawn,          {.v = lockcmd } },
 	{ 0,                            XK_Print,                   spawn,          {.v = screenshotcmd } },
+
 	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = volumemutecmd } },
 	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = volumeupcmd } },
 	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = volumedowncmd } },
@@ -126,25 +127,26 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioPrev,           spawn,          {.v = audiopreviouscmd } },
 	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = backlightupcmd } },
 	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = backlightdowncmd } },
+
 	{ MODKEY,                       XK_s,                       spawndefault,   {0} },
 	{ MODKEY,                       XK_grave,                   togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_x,                       togglescratch,  {.ui = 1 } },
 	{ MODKEY,                       XK_z,                       togglescratch,  {.ui = 2 } },
 	{ MODKEY,                       XK_b,                       togglebar,      {0} },
-	/* qwerty */
+
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_n,                       incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_m,                       incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,                       setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,                       setmfact,       {.f = +0.05} },
-	/* workman */
 //	{ MODKEY,                       XK_n,                       focusstack,     {.i = +1 } },
 //	{ MODKEY,                       XK_e,                       focusstack,     {.i = -1 } },
 //	{ MODKEY,                       XK_y,                       incnmaster,     {.i = +1 } },
 //	{ MODKEY,                       XK_o,                       incnmaster,     {.i = -1 } },
 //	{ MODKEY,                       XK_k,                       setmfact,       {.f = -0.05} },
 //	{ MODKEY,                       XK_l,                       setmfact,       {.f = +0.05} },
+
 	{ MODKEY,                       XK_Return,                  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,                     view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,                       killclient,     {0} },
