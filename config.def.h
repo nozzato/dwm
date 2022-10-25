@@ -115,7 +115,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,                  spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_i,                       spawn,          {.v = centercmd } },
 	{ MODKEY,                       XK_Escape,                  spawn,          {.v = killcmd } },
-	{ MODKEY|ShiftMask,             XK_e,                       spawn,          {.v = lockcmd } },
+	{ MODKEY|ShiftMask,             XK_a,                       spawn,          {.v = lockcmd } },
 	{ 0,                            XK_Print,                   spawn,          {.v = screenshotcmd } },
 
 	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = volumemutecmd } },
