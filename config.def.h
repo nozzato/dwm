@@ -104,14 +104,12 @@ static const char *backlightdownfn[] = { "backlight_control", "-5", NULL };
 static const char *audiotogglefn[]   = { "playerctl", "play-pause", NULL };
 static const char *audionextfn[]     = { "playerctl", "next", NULL };
 static const char *audiopreviousfn[] = { "playerctl", "previous", NULL };
+static const char *volmixerfn[]      = { "pavucontrol", NULL };
 static const char *eqenablefn[]      = { "pulseaudio-equalizer", "enable", NULL };
 static const char *eqdisablefn[]     = { "pulseaudio-equalizer", "disable", NULL };
 static const char *musictogglefn[]   = { "mpc", "toggle", NULL };
 static const char *musicnextfn[]     = { "mpc", "next", NULL };
 static const char *musicpreviousfn[] = { "mpc", "prev", NULL };
-
-
-
 
 static const Key keys[] = {
 	/* modifier                     key                         function        argument */
@@ -133,6 +131,7 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioPrev,           spawn,          {.v = audiopreviousfn } },
 	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = backlightupfn } },
 	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = backlightdownfn } },
+	{ ShiftMask,                    XF86XK_AudioMute,           spawn,          {.v = volmixerfn } },
 	{ ShiftMask,                    XF86XK_AudioRaiseVolume,    spawn,          {.v = eqenablefn } },
 	{ ShiftMask,                    XF86XK_AudioLowerVolume,    spawn,          {.v = eqdisablefn } },
 	{ ShiftMask,                    XF86XK_AudioPlay,           spawn,          {.v = musictogglefn } },
