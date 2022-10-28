@@ -24,11 +24,13 @@ typedef struct {
 const char *spcmd1[] = { "st", "-c", "scratchpad", "-t", "scratchpad", "-g", "120x34", NULL };
 const char *spcmd2[] = { "keepassxc", NULL };
 const char *spcmd3[] = { "systemd-inhibit", "--what=shutdown:handle-power-key", "veracrypt", NULL };
+const char *spcmd4[] = { "pavucontrol", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd   */
 	{ "scratchpad",  spcmd1 },
 	{ "keepassxc",   spcmd2 },
 	{ "veracrypt",   spcmd3 },
+	{ "pavucontrol", spcmd4 },
 };
 
 /* tagging */
@@ -54,6 +56,7 @@ static const Rule rules[] = {
 	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1 },
 	{ "KeePassXC",   NULL,     NULL,                              SPTAG(1),  0,          -1 },
 	{ "VeraCrypt",   NULL,     NULL,                              SPTAG(2),  1,          -1 },
+	{ "Pavucontrol", NULL,     NULL,                              SPTAG(3),  0,          -1 },
 };
 
 /* window swallowing */
@@ -104,7 +107,6 @@ static const char *backlightdownfn[] = { "backlight_control", "-5", NULL };
 static const char *audiotogglefn[]   = { "playerctl", "play-pause", NULL };
 static const char *audionextfn[]     = { "playerctl", "next", NULL };
 static const char *audiopreviousfn[] = { "playerctl", "previous", NULL };
-static const char *volmixerfn[]      = { "pavucontrol", NULL };
 static const char *eqenablefn[]      = { "pulseaudio-equalizer", "enable", NULL };
 static const char *eqdisablefn[]     = { "pulseaudio-equalizer", "disable", NULL };
 static const char *musictogglefn[]   = { "mpc", "toggle", NULL };
@@ -131,18 +133,16 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioPrev,           spawn,          {.v = audiopreviousfn } },
 	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = backlightupfn } },
 	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = backlightdownfn } },
-	{ ShiftMask,                    XF86XK_AudioMute,           spawn,          {.v = volmixerfn } },
+	{ ShiftMask,                    XF86XK_AudioMute,           togglescratch,  {.ui = 3 } },
 	{ ShiftMask,                    XF86XK_AudioRaiseVolume,    spawn,          {.v = eqenablefn } },
 	{ ShiftMask,                    XF86XK_AudioLowerVolume,    spawn,          {.v = eqdisablefn } },
 	{ ShiftMask,                    XF86XK_AudioPlay,           spawn,          {.v = musictogglefn } },
 	{ ShiftMask,                    XF86XK_AudioNext,           spawn,          {.v = musicnextfn } },
 	{ ShiftMask,                    XF86XK_AudioPrev,           spawn,          {.v = musicpreviousfn } },
 
-	{ MODKEY,                       XK_s,                       spawndefault,   {0} },
 	{ MODKEY,                       XK_grave,                   togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_x,                       togglescratch,  {.ui = 1 } },
 	{ MODKEY,                       XK_z,                       togglescratch,  {.ui = 2 } },
-	{ MODKEY,                       XK_b,                       togglebar,      {0} },
 
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
@@ -157,6 +157,8 @@ static const Key keys[] = {
 //	{ MODKEY,                       XK_k,                       setmfact,       {.f = -0.05} },
 //	{ MODKEY,                       XK_l,                       setmfact,       {.f = +0.05} },
 
+	{ MODKEY,                       XK_s,                       spawndefault,   {0} },
+	{ MODKEY,                       XK_b,                       togglebar,      {0} },
 	{ MODKEY,                       XK_Return,                  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,                     view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,                       killclient,     {0} },
