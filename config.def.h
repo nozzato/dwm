@@ -45,19 +45,19 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class         instance  title                              tags mask  isfloating  monitor */
-	{ "Gimp",        NULL,     NULL,                              0,         1,          -1 },
-	{ "Gimp",        NULL,     "GNU Image Manipulation Program",  0,         0,          -1 },
-    { "MobyDroid",   NULL,     "Working...",                      0,         1,          -1 },
-	{ "ncmpcppt",    NULL,     NULL,                              1 << 4,    0,          -1 },
-	{ "thunderbird", NULL,     NULL,                              1 << 5,    0,          -1 },
-	{ "discord",     NULL,     NULL,                              1 << 6,    0,          -1 },
-	{ "Steam",       NULL,     NULL,                              1 << 7,    1,          -1 },
-	{ "Steam",       NULL,     "Steam",                           1 << 7,    0,          -1 },
-	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1 },
-	{ "KeePassXC",   NULL,     NULL,                              SPTAG(1),  0,          -1 },
-	{ "VeraCrypt",   NULL,     NULL,                              SPTAG(2),  1,          -1 },
-	{ "Pavucontrol", NULL,     NULL,                              SPTAG(3),  0,          -1 },
+	/* class         instance  title                              tags mask  isfloating  monitor  float x,y,w,h         floatborderpx */
+	{ "Gimp",        NULL,     NULL,                              0,         1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Gimp",        NULL,     "GNU Image Manipulation Program",  0,         0,          -1,        -1,  -1,  -1,  -1,  -1 },
+    { "MobyDroid",   NULL,     "Working...",                      0,         1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "ncmpcppt",    NULL,     NULL,                              1 << 4,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "thunderbird", NULL,     NULL,                              1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "discord",     NULL,     NULL,                              1 << 6,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Steam",       NULL,     NULL,                              1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Steam",       NULL,     "Steam",                           1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "KeePassXC",   NULL,     NULL,                              SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "VeraCrypt",   NULL,     NULL,                              SPTAG(2),  1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Pavucontrol", NULL,     NULL,                              SPTAG(3),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 };
 
 /* window swallowing */
