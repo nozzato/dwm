@@ -52,7 +52,7 @@ static const Rule rules[] = {
     { "osu!",        NULL,     NULL,                              0,         1,          -1,       280, 165,1360, 768,  -1 },
 	{ "ncmpcppt",    NULL,     NULL,                              1 << 4,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "thunderbird", NULL,     NULL,                              1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "discord",     NULL,     NULL,                              1 << 6,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "discord",     NULL,     NULL,                              1 << 6,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,     NULL,                              1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,     "Steam",                           1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1,        -1,  -1,  -1,  -1,  -1 },
