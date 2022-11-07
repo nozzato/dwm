@@ -5,7 +5,7 @@
 #define SESSION_FILE "/tmp/dwm-session"
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -21,7 +21,7 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = { "st", "-c", "scratchpad", "-t", "scratchpad", "-g", "120x34", NULL };
+const char *spcmd1[] = { "st", "-c", "scratchpad", NULL };
 const char *spcmd2[] = { "keepassxc", NULL };
 const char *spcmd3[] = { "systemd-inhibit", "--what=shutdown:handle-power-key", "veracrypt", NULL };
 const char *spcmd4[] = { "pavucontrol", NULL };
@@ -50,12 +50,13 @@ static const Rule rules[] = {
 	{ "Gimp",        NULL,     "GNU Image Manipulation Program",  0,         0,          -1,        -1,  -1,  -1,  -1,  -1 },
     { "MobyDroid",   NULL,     "Working...",                      0,         1,          -1,        -1,  -1,  -1,  -1,  -1 },
     { "osu!",        NULL,     NULL,                              0,         1,          -1,       280, 165,1360, 768,  -1 },
+	{ "st",          NULL,     NULL,                              0,         0,          -1,        -1,  -1,  -1,  -1,   1 },
 	{ "ncmpcppt",    NULL,     NULL,                              1 << 4,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "thunderbird", NULL,     NULL,                              1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "discord",     NULL,     NULL,                              1 << 6,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,     NULL,                              1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,     "Steam",                           1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1,         0,  19,1922, 154,  -1 },
 	{ "KeePassXC",   NULL,     NULL,                              SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "VeraCrypt",   NULL,     NULL,                              SPTAG(2),  1,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Pavucontrol", NULL,     NULL,                              SPTAG(3),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
