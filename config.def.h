@@ -51,6 +51,7 @@ static const Rule rules[] = {
     { "MobyDroid",   NULL,     "Working...",                      0,         1,          -1,        -1,  -1,  -1,  -1,  -1 },
     { "osu!",        NULL,     NULL,                              0,         1,          -1,       280, 165,1360, 768,  -1 },
 	{ "st",          NULL,     NULL,                              0,         0,          -1,        -1,  -1,  -1,  -1,   1 },
+    { "Thunar",      NULL,     "File Operation Progress",         0,         1,          -1,       735, 494,  -1,  -1,  -1 },
 	{ "ncmpcppt",    NULL,     NULL,                              1 << 4,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "thunderbird", NULL,     NULL,                              1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "discord",     NULL,     NULL,                              1 << 6,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
