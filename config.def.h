@@ -5,7 +5,7 @@
 #define SESSION_FILE "/tmp/dwm-session"
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -57,7 +57,7 @@ static const Rule rules[] = {
 	{ "discord",     NULL,     NULL,                              1 << 6,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,     NULL,                              1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,     "Steam",                           1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1,         0,  19,1922, 154,  -1 },
+	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
 	{ "KeePassXC",   NULL,     NULL,                              SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "VeraCrypt",   NULL,     NULL,                              SPTAG(2),  1,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Pavucontrol", NULL,     NULL,                              SPTAG(3),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
