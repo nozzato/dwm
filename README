@@ -22,6 +22,7 @@ defaulttagapps
 doublepressquit
 dynamicswallow
 floatrules
+noborder-selflickerfix
 pertag
 restartsig
 restoreafterrestart
