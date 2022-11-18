@@ -96,7 +96,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run_history", NULL };
 static const char *clipboardcmd[] = { "clipmenu", NULL };
-static const char *calculatorcmd[] = { "dcalc", NULL };
+static const char *calculatorcmd[] = { "=", NULL };
 static const char *termcmd[] = { "st", NULL };
 static const char *centercmd[] = { "center", NULL };
 static const char *killcmd[] = { "xkill", NULL };
@@ -122,7 +122,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_d,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_v,                       spawn,          {.v = clipboardcmd } },
-	{ MODKEY,                       XK_c,                       spawn,          {.v = calculatorcmd } },
+	{ MODKEY,                       XK_equal,                   spawn,          {.v = calculatorcmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                  spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_i,                       spawn,          {.v = centercmd } },
 	{ MODKEY,                       XK_Escape,                  spawn,          {.v = killcmd } },
@@ -146,7 +146,7 @@ static const Key keys[] = {
 
 	{ MODKEY,                       XK_grave,                   togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_x,                       togglescratch,  {.ui = 1 } },
-	{ MODKEY,                       XK_z,                       togglescratch,  {.ui = 2 } },
+	{ MODKEY,                       XK_c,                       togglescratch,  {.ui = 2 } },
 
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
