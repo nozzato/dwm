@@ -94,7 +94,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run_history", NULL };
+static const char *dmenucmd[] = { "dmenu_run_aliases_history", NULL };
 static const char *clipboardcmd[] = { "clipmenu", NULL };
 static const char *calculatorcmd[] = { "=", NULL };
 static const char *termcmd[] = { "st", NULL };
