@@ -12,9 +12,9 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "DejaVuSansMono Nerd Font:size=10" };
 static const char *colors[][3]      = {
 	/*                fg         bg         border   */
-	[SchemeNorm]  = { "#cccccc", "#1c1c1c", "#303030" },
-	[SchemeSel]   = { "#cccccc", "#00875f", "#303030" },
-	[SchemeTitle] = { "#cccccc", "#1c1c1c", "#303030" },
+	[SchemeNorm]  = { "#a9b1d6", "#121116", "#292e42" },
+	[SchemeSel]   = { "#121116", "#a9b1d6", "#292e42" },
+	[SchemeTitle] = { "#a9b1d6", "#121116", "#292e42" },
 };
 
 typedef struct {
