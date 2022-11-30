@@ -13,7 +13,7 @@ static const char *fonts[]          = { "DejaVuSansMono Nerd Font:size=10" };
 static const char *colors[][3]      = {
 	/*                fg         bg         border   */
 	[SchemeNorm]  = { "#a9b1d6", "#121116", "#292e42" },
-	[SchemeSel]   = { "#121116", "#7aa2f7", "#292e42" },
+	[SchemeSel]   = { "#121116", "#6e93d9", "#292e42" },
 	[SchemeTitle] = { "#a9b1d6", "#121116", "#292e42" },
 };
 
