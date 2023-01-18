@@ -15,6 +15,7 @@ static const char *colors[][3]      = {
 	[SchemeNorm]  = { "#a9b1d6", "#121116", "#292e42" },
 	[SchemeSel]   = { "#121116", "#6e93d9", "#292e42" },
 	[SchemeTitle] = { "#a9b1d6", "#121116", "#292e42" },
+	[SchemeUrg]   = { "#121116", "#a9b1d6", "#292e42" },
 };
 
 typedef struct {
