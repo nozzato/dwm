@@ -24,14 +24,12 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = { "st", "-c", "scratchpad", NULL };
 const char *spcmd2[] = { "keepassxc", NULL };
-const char *spcmd3[] = { "systemd-inhibit", "--what=shutdown:handle-power-key", "veracrypt", NULL };
-const char *spcmd4[] = { "pavucontrol", NULL };
+const char *spcmd3[] = { "pavucontrol", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd   */
 	{ "scratchpad",  spcmd1 },
 	{ "keepassxc",   spcmd2 },
-	{ "veracrypt",   spcmd3 },
-	{ "pavucontrol", spcmd4 },
+	{ "pavucontrol", spcmd3 },
 };
 
 /* tagging */
@@ -60,8 +58,7 @@ static const Rule rules[] = {
 	{ "Steam",       NULL,     "Steam",                           1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
 	{ "KeePassXC",   NULL,     NULL,                              SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "VeraCrypt",   NULL,     NULL,                              SPTAG(2),  1,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Pavucontrol", NULL,     NULL,                              SPTAG(3),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Pavucontrol", NULL,     NULL,                              SPTAG(2),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 };
 
 /* window swallowing */
@@ -138,7 +135,6 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioPrev,           spawn,          {.v = audiopreviousfn } },
 	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = backlightupfn } },
 	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = backlightdownfn } },
-	{ ShiftMask,                    XF86XK_AudioMute,           togglescratch,  {.ui = 3 } },
 	{ ShiftMask,                    XF86XK_AudioRaiseVolume,    spawn,          {.v = eqenablefn } },
 	{ ShiftMask,                    XF86XK_AudioLowerVolume,    spawn,          {.v = eqdisablefn } },
 	{ ShiftMask,                    XF86XK_AudioPlay,           spawn,          {.v = musictogglefn } },
