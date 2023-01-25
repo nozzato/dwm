@@ -324,6 +324,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 static Atom wmatom[WMLast], netatom[NetLast];
 static int restart = 0;
 static int running = 1;
+static int dtaalt = 0;
 static Cur *cursor[CurLast];
 static Clr **scheme;
 static Display *dpy;
@@ -2577,11 +2578,18 @@ swalstopsel(const Arg *unused)
 }
 
 void
-spawndefault()
+spawndefault(const Arg *arg)
 {
+    if(arg->i) dtaalt = 1;
 	const char *app = defaulttagapps[lastchosentag[selmon->num]];
-	if (app) {
+	const char *appalt = defaulttagappsalt[lastchosentag[selmon->num]];
+	if (app && dtaalt == 0) {
 		const char *defaultcmd[] = {app, NULL};
+		Arg a = {.v = defaultcmd};
+		spawn(&a);
+    }
+    if (appalt && dtaalt == 1) {
+		const char *defaultcmd[] = {appalt, NULL};
 		Arg a = {.v = defaultcmd};
 		spawn(&a);
 	}
