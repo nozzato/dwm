@@ -59,6 +59,7 @@ static const Rule rules[] = {
 	{ "discord",     NULL,     NULL,                              1 << 6,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,     NULL,                              1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,     "Steam",                           1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Steam",       NULL,     "Music Player",                    1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
 	{ "KeePassXC",   NULL,     NULL,                              SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Pavucontrol", NULL,     NULL,                              SPTAG(2),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
