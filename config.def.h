@@ -98,6 +98,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run_aliases_history", NULL };
 static const char *clipboardcmd[] = { "clipmenu", NULL };
+static const char *emojimenucmd[] = { "emojimenu", NULL };
 static const char *calculatorcmd[] = { "=", NULL };
 static const char *termcmd[] = { "st", NULL };
 static const char *centercmd[] = { "center", NULL };
@@ -125,6 +126,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_d,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_v,                       spawn,          {.v = clipboardcmd } },
+	{ MODKEY,                       XK_semicolon,               spawn,          {.v = emojimenucmd } },
 	{ MODKEY,                       XK_equal,                   spawn,          {.v = calculatorcmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                  spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_i,                       spawn,          {.v = centercmd } },
