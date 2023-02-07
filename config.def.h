@@ -35,7 +35,7 @@ static Sp scratchpads[] = {
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const char *defaulttagapps[][9] = {
-	{ NULL, NULL, NULL, NULL, "ncmpcppt", "thunderbird", "discord", "steam", NULL },
+	{ NULL, NULL, NULL, NULL, "ncmpcpps", "thunderbird", "discord", "steam", NULL },
 	{ NULL, NULL, NULL, NULL, NULL, NULL, NULL, "heroic", NULL },
 };
 
@@ -54,7 +54,7 @@ static const Rule rules[] = {
 	{ "dotnet",      NULL,     "osu!",                            0,         1,          -1,       280, 165,1360, 768,  -1 },
 	{ "st",          NULL,     NULL,                              0,         0,          -1,        -1,  -1,  -1,  -1,   1 },
 	{ "Thunar",      NULL,     "File Operation Progress",         0,         1,          -1,       735, 494,  -1,  -1,  -1 },
-	{ "ncmpcppt",    NULL,     NULL,                              1 << 4,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "ncmpcpps",    NULL,     NULL,                              1 << 4,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "thunderbird", NULL,     NULL,                              1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "discord",     NULL,     NULL,                              1 << 6,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,     NULL,                              1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
