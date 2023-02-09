@@ -18,6 +18,11 @@ static const char *colors[][3]      = {
 	[SchemeUrg]   = { "#121116", "#a9b1d6", "#292e42" },
 };
 
+static const char *const autostart[] = {
+	"sh", "-c", "killall xcompmgr && sleep 0.1 && xcompmgr &", NULL,
+	NULL /* terminate */
+};
+
 typedef struct {
 	const char *name;
 	const void *cmd;
