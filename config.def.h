@@ -101,6 +101,7 @@ static const char *clipboardcmd[] = { "clipmenu", NULL };
 static const char *emojimenucmd[] = { "emojimenu", NULL };
 static const char *calculatorcmd[] = { "=", NULL };
 static const char *termcmd[] = { "st", NULL };
+static const char *filemgrcmd[] = { "thunar", NULL };
 static const char *centercmd[] = { "center", NULL };
 static const char *killcmd[] = { "xkill", NULL };
 static const char *lockcmd[] = { "alock", "-bg", "none", "-cursor", "blank", NULL };
@@ -129,6 +130,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_semicolon,               spawn,          {.v = emojimenucmd } },
 	{ MODKEY,                       XK_equal,                   spawn,          {.v = calculatorcmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                  spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_e,                       spawn,          {.v = filemgrcmd } },
 	{ MODKEY,                       XK_i,                       spawn,          {.v = centercmd } },
 	{ MODKEY,                       XK_Escape,                  spawn,          {.v = killcmd } },
 	{ MODKEY|ShiftMask,             XK_a,                       spawn,          {.v = lockcmd } },
