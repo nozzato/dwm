@@ -22,14 +22,14 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = { "st", "-c", "scratchpad", NULL };
+const char *spcmd1[] = { "st", "-n", "scratchpad", "-c", "scratchpad", NULL };
 const char *spcmd2[] = { "keepassxc", NULL };
 const char *spcmd3[] = { "pavucontrol", NULL };
 static Sp scratchpads[] = {
-	/* name          cmd   */
-	{ "scratchpad",  spcmd1 },
-	{ "keepassxc",   spcmd2 },
-	{ "pavucontrol", spcmd3 },
+	/* name           cmd   */
+	{ "scratchpad",   spcmd1 },
+	{ "keepassxc",    spcmd2 },
+	{ "pavucontrol",  spcmd3 },
 };
 
 /* tagging */
@@ -47,22 +47,22 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class         instance  title                              tags mask  isfloating  monitor  float x,y,w,h         floatborderpx */
-	{ "Gimp",        NULL,     NULL,                              0,         1,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Gimp",        NULL,     "GNU Image Manipulation Program",  0,         0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "MobyDroid",   NULL,     "Working...",                      0,         1,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "dotnet",      NULL,     "osu!",                            0,         1,          -1,       280, 165,1360, 768,  -1 },
-	{ "st",          NULL,     NULL,                              0,         0,          -1,        -1,  -1,  -1,  -1,   1 },
-	{ "Thunar",      NULL,     "File Operation Progress",         0,         1,          -1,       735, 494,  -1,  -1,  -1 },
-	{ "ncmpcpps",    NULL,     NULL,                              1 << 4,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "thunderbird", NULL,     NULL,                              1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "discord",     NULL,     NULL,                              1 << 6,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Steam",       NULL,     NULL,                              1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Steam",       NULL,     "Steam",                           1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Steam",       NULL,     "Music Player",                    1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "scratchpad",  NULL,     NULL,                              SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
-	{ "KeePassXC",   NULL,     NULL,                              SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Pavucontrol", NULL,     NULL,                              SPTAG(2),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	/* class         instance       title                             tags mask  isfloating  monitor  float x,y,w,h         floatborderpx */
+	{ "Gimp",        NULL,          NULL,                             0,         1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Gimp",        NULL,          "GNU Image Manipulation Program", 0,         0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "MobyDroid",   NULL,          "Working...",                     0,         1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "dotnet",      NULL,          "osu!",                           0,         1,          -1,       280, 165,1360, 768,  -1 },
+	{ "st",          NULL,          NULL,                             0,         0,          -1,        -1,  -1,  -1,  -1,   1 },
+	{ "Thunar",      NULL,          "File Operation Progress",        0,         1,          -1,       735, 494,  -1,  -1,  -1 },
+	{ "ncmpcpps",    NULL,          NULL,                             1 << 4,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "thunderbird", NULL,          NULL,                             1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "discord",     NULL,          NULL,                             1 << 6,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Steam",       NULL,          NULL,                             1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Steam",       NULL,          "Steam",                          1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Steam",       NULL,          "Music Player",                   1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ NULL,          "scratchpad",  NULL,                             SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
+	{ NULL,          "keepassxc",   NULL,                             SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ NULL,          "pavucontrol", NULL,                             SPTAG(2),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 };
 
 /* window swallowing */
