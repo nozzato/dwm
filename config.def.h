@@ -101,7 +101,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *runcmd[] = { "dmenu_run_aliases_history", NULL };
+static const char *runcmd[] = { "dmenu_run_plus", NULL };
+static const char *runsudocmd[] = { "dmenu_run_plus", "-A", NULL };
 static const char *clipboardcmd[] = { "clipmenu", NULL };
 static const char *emojicmd[] = { "emojimenu", NULL };
 static const char *calculatorcmd[] = { "=", NULL };
@@ -130,7 +131,7 @@ static const char *kbdlightonoffcmd[] = { "kbd-backlight-toggle", NULL };
 static const Key keys[] = {
 	/* modifier                     key                         function        argument */
 	{ MODKEY,                       XK_p,                       spawn,          {.v = runcmd } },
-	{ MODKEY,                       XK_d,                       spawn,          {.v = runcmd } },
+	{ MODKEY|ShiftMask,             XK_p,                       spawn,          {.v = runsudocmd } },
 	{ MODKEY,                       XK_v,                       spawn,          {.v = clipboardcmd } },
 	{ MODKEY,                       XK_semicolon,               spawn,          {.v = emojicmd } },
 	{ MODKEY,                       XK_equal,                   spawn,          {.v = calculatorcmd } },
