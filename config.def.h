@@ -27,12 +27,12 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = { "st", "-n", "scratchpad", "-c", "scratchpad", NULL };
+const char *spcmd1[] = { "st", "-n", "terminalsp", NULL };
 const char *spcmd2[] = { "keepassxc", NULL };
 const char *spcmd3[] = { "pavucontrol", NULL };
 static Sp scratchpads[] = {
 	/* name           cmd   */
-	{ "scratchpad",   spcmd1 },
+	{ "terminalsp",   spcmd1 },
 	{ "keepassxc",    spcmd2 },
 	{ "pavucontrol",  spcmd3 },
 };
@@ -65,7 +65,7 @@ static const Rule rules[] = {
 	{ "Steam",       NULL,          NULL,                             1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,          "Steam",                          1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,          "Music Player",                   1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ NULL,          "scratchpad",  NULL,                             SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
+	{ NULL,          "terminalsp",  NULL,                             SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
 	{ NULL,          "keepassxc",   NULL,                             SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ NULL,          "pavucontrol", NULL,                             SPTAG(2),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 };
@@ -101,64 +101,63 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run_aliases_history", NULL };
+static const char *runcmd[] = { "dmenu_run_aliases_history", NULL };
 static const char *clipboardcmd[] = { "clipmenu", NULL };
-static const char *emojimenucmd[] = { "emojimenu", NULL };
+static const char *emojicmd[] = { "emojimenu", NULL };
 static const char *calculatorcmd[] = { "=", NULL };
-static const char *termcmd[] = { "st", NULL };
-static const char *filemgrcmd[] = { "thunar", NULL };
+static const char *terminalcmd[] = { "st", NULL };
+static const char *explorercmd[] = { "thunar", NULL };
 static const char *centercmd[] = { "center", NULL };
 static const char *killcmd[] = { "xkill", NULL };
 static const char *lockcmd[] = { "alock", "-bg", "none", "-cursor", "blank", NULL };
 static const char *screenshotcmd[] = { "maimshot", NULL };
 /* functions */
-static const char *volumemutefn[]         = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
-static const char *volumeupfn[]           = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
-static const char *volumedownfn[]         = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
-static const char *backlightupfn[]        = { "light", "-A", "5", NULL };
-static const char *backlightdownfn[]      = { "light", "-U", "5", NULL };
-static const char *kbdbacklighttogglefn[] = { "kbd-backlight-toggle", NULL };
-static const char *audiotogglefn[]        = { "playerctl", "play-pause", NULL };
-static const char *audionextfn[]          = { "playerctl", "next", NULL };
-static const char *audiopreviousfn[]      = { "playerctl", "previous", NULL };
-static const char *eqenablefn[]           = { "pulseaudio-equalizer", "enable", NULL };
-static const char *eqdisablefn[]          = { "pulseaudio-equalizer", "disable", NULL };
-static const char *musictogglefn[]        = { "mpc", "toggle", NULL };
-static const char *musicnextfn[]          = { "mpc", "next", NULL };
-static const char *musicpreviousfn[]      = { "mpc", "prev", NULL };
+static const char *audiomutecmd[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
+static const char *audioraisevolumecmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *audiolowervolumecmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *audioplaypausecmd[] = { "playerctl", "play-pause", NULL };
+static const char *audionextcmd[] = { "playerctl", "next", NULL };
+static const char *audioprevcmd[] = { "playerctl", "previous", NULL };
+static const char *musicplaypausecmd[] = { "mpc", "toggle", NULL };
+static const char *musicnextcmd[] = { "mpc", "next", NULL };
+static const char *musicprevcmd[] = { "mpc", "prev", NULL };
+static const char *audiopresetoncmd[] = { "pulseaudio-equalizer", "enable", NULL };
+static const char *audiopresetoffcmd[] = { "pulseaudio-equalizer", "disable", NULL };
+static const char *monbrightnessupcmd[] = { "light", "-A", "5", NULL };
+static const char *monbrightnessdowncmd[] = { "light", "-U", "5", NULL };
+static const char *kbdlightonoffcmd[] = { "kbd-backlight-toggle", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key                         function        argument */
-	{ MODKEY,                       XK_p,                       spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_d,                       spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,                       spawn,          {.v = runcmd } },
+	{ MODKEY,                       XK_d,                       spawn,          {.v = runcmd } },
 	{ MODKEY,                       XK_v,                       spawn,          {.v = clipboardcmd } },
-	{ MODKEY,                       XK_semicolon,               spawn,          {.v = emojimenucmd } },
+	{ MODKEY,                       XK_semicolon,               spawn,          {.v = emojicmd } },
 	{ MODKEY,                       XK_equal,                   spawn,          {.v = calculatorcmd } },
-	{ MODKEY|ShiftMask,             XK_Return,                  spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_e,                       spawn,          {.v = filemgrcmd } },
+	{ MODKEY|ShiftMask,             XK_Return,                  spawn,          {.v = terminalcmd } },
+	{ MODKEY,                       XK_grave,                   togglescratch,  {.ui = 0 } },
+	{ MODKEY,                       XK_e,                       spawn,          {.v = explorercmd } },
+	{ MODKEY,                       XK_x,                       togglescratch,  {.ui = 1 } },
+	{ MODKEY,                       XK_c,                       togglescratch,  {.ui = 2 } },
 	{ MODKEY,                       XK_i,                       spawn,          {.v = centercmd } },
 	{ MODKEY,                       XK_Escape,                  spawn,          {.v = killcmd } },
 	{ MODKEY|ShiftMask,             XK_a,                       spawn,          {.v = lockcmd } },
 	{ 0,                            XK_Print,                   spawn,          {.v = screenshotcmd } },
 
-	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = volumemutefn } },
-	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = volumeupfn } },
-	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = volumedownfn } },
-	{ 0,                            XF86XK_AudioPlay,           spawn,          {.v = audiotogglefn } },
-	{ 0,                            XF86XK_AudioNext,           spawn,          {.v = audionextfn } },
-	{ 0,                            XF86XK_AudioPrev,           spawn,          {.v = audiopreviousfn } },
-	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = backlightupfn } },
-	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = backlightdownfn } },
-	{ ShiftMask,                    XF86XK_AudioMute,           spawn,          {.v = kbdbacklighttogglefn } },
-	{ ShiftMask,                    XF86XK_AudioRaiseVolume,    spawn,          {.v = eqenablefn } },
-	{ ShiftMask,                    XF86XK_AudioLowerVolume,    spawn,          {.v = eqdisablefn } },
-	{ ShiftMask,                    XF86XK_AudioPlay,           spawn,          {.v = musictogglefn } },
-	{ ShiftMask,                    XF86XK_AudioNext,           spawn,          {.v = musicnextfn } },
-	{ ShiftMask,                    XF86XK_AudioPrev,           spawn,          {.v = musicpreviousfn } },
-
-	{ MODKEY,                       XK_grave,                   togglescratch,  {.ui = 0 } },
-	{ MODKEY,                       XK_x,                       togglescratch,  {.ui = 1 } },
-	{ MODKEY,                       XK_c,                       togglescratch,  {.ui = 2 } },
+	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = audiomutecmd } },
+	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = audioraisevolumecmd } },
+	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = audiolowervolumecmd } },
+	{ 0,                            XF86XK_AudioPlay,           spawn,          {.v = audioplaypausecmd } },
+	{ 0,                            XF86XK_AudioNext,           spawn,          {.v = audionextcmd } },
+	{ 0,                            XF86XK_AudioPrev,           spawn,          {.v = audioprevcmd } },
+	{ ShiftMask,                    XF86XK_AudioPlay,           spawn,          {.v = musicplaypausecmd } },
+	{ ShiftMask,                    XF86XK_AudioNext,           spawn,          {.v = musicnextcmd } },
+	{ ShiftMask,                    XF86XK_AudioPrev,           spawn,          {.v = musicprevcmd } },
+	{ ShiftMask,                    XF86XK_AudioRaiseVolume,    spawn,          {.v = audiopresetoncmd } },
+	{ ShiftMask,                    XF86XK_AudioLowerVolume,    spawn,          {.v = audiopresetoffcmd } },
+	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = monbrightnessupcmd } },
+	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = monbrightnessdowncmd } },
+	{ ShiftMask,                    XF86XK_AudioMute,           spawn,          {.v = kbdlightonoffcmd } },
 
 	{ MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },
@@ -222,7 +221,7 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,                Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,                Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,                Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,                Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,                Button2,        spawn,          {.v = terminalcmd } },
 	{ ClkClientWin,         MODKEY,           Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,           Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,           Button3,        resizemouse,    {0} },
