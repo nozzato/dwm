@@ -27,14 +27,14 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = { "st", "-n", "terminalsp", NULL };
+const char *spcmd1[] = { "st", "-c", "terminalsp", NULL };
 const char *spcmd2[] = { "keepassxc", NULL };
 const char *spcmd3[] = { "pavucontrol", NULL };
 static Sp scratchpads[] = {
-	/* name           cmd   */
-	{ "terminalsp",   spcmd1 },
-	{ "keepassxc",    spcmd2 },
-	{ "pavucontrol",  spcmd3 },
+	/* name             cmd   */
+	{ "terminalsp",     spcmd1 },
+	{ "keepassxcsp",    spcmd2 },
+	{ "pavucontrolsp",  spcmd3 },
 };
 
 /* tagging */
@@ -65,9 +65,9 @@ static const Rule rules[] = {
 	{ "Steam",       NULL,          NULL,                             1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,          "Steam",                          1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "Steam",       NULL,          "Music Player",                   1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ NULL,          "terminalsp",  NULL,                             SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
-	{ NULL,          "keepassxc",   NULL,                             SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ NULL,          "pavucontrol", NULL,                             SPTAG(2),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "terminalsp",  NULL,          NULL,                             SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
+	{ "KeePassXC",   NULL,          NULL,                             SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Pavucontrol", NULL,          NULL,                             SPTAG(2),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 };
 
 /* window swallowing */
