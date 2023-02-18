@@ -9,7 +9,7 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "DejaVuSansMono Nerd Font:size=10", "Blobmoji:size=10" };
+static const char *fonts[]          = { "DejaVuSansMono Nerd Font:size=10", "Font Awesome 6 Free Solid:size=10", "Blobmoji:size=10" };
 static const char *colors[][3]      = {
 	/*                fg         bg         border   */
 	[SchemeNorm]  = { "#a9b1d6", "#121116", "#292e42" },
@@ -110,7 +110,7 @@ static const char *terminalcmd[] = { "st", NULL };
 static const char *explorercmd[] = { "thunar", NULL };
 static const char *centercmd[] = { "center", NULL };
 static const char *killcmd[] = { "xkill", NULL };
-static const char *lockcmd[] = { "alock", "-bg", "none", "-cursor", "blank", NULL };
+static const char *lockcmd[] = { "alock", "-b", "image:file=/home/noah/app/dwm/lock_screen.png", "-c", "blank", "-i", "frame:width=1", NULL };
 static const char *screenshotcmd[] = { "maimshot", NULL };
 /* functions */
 static const char *audiomutecmd[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
