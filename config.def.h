@@ -19,7 +19,6 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"sh", "-c", "killall xcompmgr; sleep 3 && xcompmgr &", NULL,
 	NULL /* terminate */
 };
 
