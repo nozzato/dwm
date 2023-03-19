@@ -109,7 +109,7 @@ static const char *terminalcmd[] = { "st", NULL };
 static const char *explorercmd[] = { "thunar", NULL };
 static const char *centercmd[] = { "center", NULL };
 static const char *killcmd[] = { "xkill", NULL };
-static const char *lockcmd[] = { "alock", "-b", "image:file=/home/noah/app/dwm/lock_screen.png", "-c", "blank", "-i", "frame:width=1", NULL };
+static const char *lockcmd[] = { "sh", "-c", "alock -b image:file=$HOME/app/dwm/lock_screen.png -c blank -i frame:width=1", NULL };
 static const char *screenshotcmd[] = { "maimshot", NULL };
 /* functions */
 static const char *audiomutecmd[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
