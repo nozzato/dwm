@@ -113,8 +113,8 @@ static const char *lockcmd[] = { "sh", "-c", "alock -b image:file=$HOME/app/dwm/
 static const char *screenshotcmd[] = { "maimshot", NULL };
 /* functions */
 static const char *audiomutecmd[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
-static const char *audioraisevolumecmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
-static const char *audiolowervolumecmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *audioraisevolumecmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+2%", NULL };
+static const char *audiolowervolumecmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-2%", NULL };
 static const char *audioplaypausecmd[] = { "playerctl", "play-pause", NULL };
 static const char *audionextcmd[] = { "playerctl", "next", NULL };
 static const char *audioprevcmd[] = { "playerctl", "previous", NULL };
@@ -123,8 +123,8 @@ static const char *audiolooponcmd[] = { "sh", "-c", "mpc repeat on && mpc single
 static const char *audioloopoffcmd[] = { "sh", "-c", "mpc repeat off && mpc single off", NULL };
 static const char *audiopresetoncmd[] = { "pulseaudio-equalizer", "enable", NULL };
 static const char *audiopresetoffcmd[] = { "pulseaudio-equalizer", "disable", NULL };
-static const char *monbrightnessupcmd[] = { "light", "-A", "5", NULL };
-static const char *monbrightnessdowncmd[] = { "light", "-U", "5", NULL };
+static const char *monbrightnessupcmd[] = { "light", "-A", "4", NULL };
+static const char *monbrightnessdowncmd[] = { "light", "-U", "4", NULL };
 static const char *kbdlightonoffcmd[] = { "kbd-backlight-toggle", NULL };
 
 static const Key keys[] = {
