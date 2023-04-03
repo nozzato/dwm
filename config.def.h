@@ -110,8 +110,8 @@ static const char *explorercmd[] = { "thunar", NULL };
 static const char *centercmd[] = { "center", NULL };
 static const char *killcmd[] = { "xkill", NULL };
 static const char *lockcmd[] = { "sh", "-c", "alock -b image:file=$HOME/app/dwm/lock_screen.png -c blank -i frame:width=1", NULL };
+static const char *vpnonoffcmd[] = { "vpn-toggle", NULL };
 static const char *screenshotcmd[] = { "maimshot", NULL };
-/* functions */
 static const char *audiomutecmd[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *audioraisevolumecmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+2%", NULL };
 static const char *audiolowervolumecmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-2%", NULL };
@@ -142,8 +142,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_i,                       spawn,          {.v = centercmd } },
 	{ MODKEY,                       XK_Escape,                  spawn,          {.v = killcmd } },
 	{ MODKEY|ShiftMask,             XK_a,                       spawn,          {.v = lockcmd } },
+	{ MODKEY|ShiftMask,             XK_v,                       spawn,          {.v = vpnonoffcmd } },
 	{ 0,                            XK_Print,                   spawn,          {.v = screenshotcmd } },
-
 	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = audiomutecmd } },
 	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = audioraisevolumecmd } },
 	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = audiolowervolumecmd } },
