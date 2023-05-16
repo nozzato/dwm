@@ -28,19 +28,17 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = { "st", "-c", "terminalsp", NULL };
 const char *spcmd2[] = { "keepassxc", NULL };
-const char *spcmd3[] = { "pavucontrol", NULL };
 static Sp scratchpads[] = {
 	/* name             cmd   */
 	{ "terminalsp",     spcmd1 },
 	{ "keepassxcsp",    spcmd2 },
-	{ "pavucontrolsp",  spcmd3 },
 };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const char *defaulttagapps[][9] = {
-	{ NULL, NULL, NULL, NULL, "ncmpcpp-st", "thunderbird", "discord", "steam", NULL },
-	{ NULL, NULL, NULL, NULL, NULL, NULL, NULL, "heroic", NULL },
+	{ NULL, NULL, NULL, NULL, NULL, "steam", "discord", "thunderbird", "ncmpcpp-st" },
+	{ NULL, NULL, NULL, NULL, NULL, "heroic", NULL, "outlook-librewolf", NULL },
 };
 
 /* Lockfile */
@@ -58,15 +56,14 @@ static const Rule rules[] = {
 	{ "dotnet",      NULL,          "osu!",                           0,         1,          -1,       280, 165,1360, 768,  -1 },
 	{ "st",          NULL,          NULL,                             0,         0,          -1,        -1,  -1,  -1,  -1,   1 },
 	{ "Thunar",      NULL,          "File Operation Progress",        0,         1,          -1,       735, 494,  -1,  -1,  -1 },
-	{ "ncmpcpps",    NULL,          NULL,                             1 << 4,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "thunderbird", NULL,          NULL,                             1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Steam",       NULL,          NULL,                             1 << 5,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Steam",       NULL,          "Steam",                          1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "Steam",       NULL,          "Music Player",                   1 << 5,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "discord",     NULL,          NULL,                             1 << 6,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Steam",       NULL,          NULL,                             1 << 7,    1,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Steam",       NULL,          "Steam",                          1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Steam",       NULL,          "Music Player",                   1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "thunderbird", NULL,          NULL,                             1 << 7,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
+	{ "ncmpcpp",     NULL,          NULL,                             1 << 8,    0,          -1,        -1,  -1,  -1,  -1,  -1 },
 	{ "terminalsp",  NULL,          NULL,                             SPTAG(0),  1,          -1,         0,  19,1915, 154,  -1 },
 	{ "KeePassXC",   NULL,          NULL,                             SPTAG(1),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
-	{ "Pavucontrol", NULL,          NULL,                             SPTAG(2),  0,          -1,        -1,  -1,  -1,  -1,  -1 },
 };
 
 /* window swallowing */
@@ -184,8 +181,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_g,                       togglefullscr,  {0} },
 	{ MODKEY,                       XK_space,                   setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,                   togglefloating, {0} },
-	{ MODKEY,                       XK_0,                       view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,                       tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,                   focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period,                  focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                   tagmon,         {.i = -1 } },
@@ -202,6 +197,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                                       6)
 	TAGKEYS(                        XK_8,                                       7)
 	TAGKEYS(                        XK_9,                                       8)
+	TAGKEYS(                        XK_0,                                       9)
 	TAGKEYS(                        XK_exclam,                                  0)
 	TAGKEYS(                        XK_quotedbl,                                1)
 	TAGKEYS(                        XK_sterling,                                2)
