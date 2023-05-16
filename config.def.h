@@ -181,6 +181,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_g,                       togglefullscr,  {0} },
 	{ MODKEY,                       XK_space,                   setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,                   togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_0,                       tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,                   focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period,                  focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                   tagmon,         {.i = -1 } },
@@ -197,7 +198,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                                       6)
 	TAGKEYS(                        XK_8,                                       7)
 	TAGKEYS(                        XK_9,                                       8)
-	TAGKEYS(                        XK_0,                                       9)
 	TAGKEYS(                        XK_exclam,                                  0)
 	TAGKEYS(                        XK_quotedbl,                                1)
 	TAGKEYS(                        XK_sterling,                                2)
@@ -207,7 +207,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_ampersand,                               6)
 	TAGKEYS(                        XK_asterisk,                                7)
 	TAGKEYS(                        XK_parenleft,                               8)
-	TAGKEYS(                        XK_parenright,                              9)
 };
 
 /* button definitions */
